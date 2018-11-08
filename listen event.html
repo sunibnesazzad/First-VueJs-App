@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VeuJs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id= "app">
+    <!--<button v-on:click="increase">Click me</button>-->
+    <button v-on:click="increase(2)">Click me</button>
+
+    <p>{{ count }}</p>
+    <p v-on:mousemove="updateCor"> Cordinate : {{x}} / {{y}}</p>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            count: 0,
+            x:0,
+            y:0
+        },
+        methods:{
+            increase: function(step){
+                this.count += step;
+            },
+            updateCor: function(event){
+                this.x= event.clientX;
+                this.y= event.clientY;
+            }
+        }
+    });
+</script>
+</body>
+</html>

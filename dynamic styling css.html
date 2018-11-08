@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VeuJs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<style>
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        display: inline-block;
+        margin: 10px;
+    }
+    .red{
+        background-color: red;
+    }
+    .green{
+        background-color: green;
+    }
+    .blue{
+        background-color: blueviolet;
+    }
+
+</style>
+
+ <div id="app">
+     <div class="demo"
+          v-on:click="attachRed = !attachRed"
+          :class="{red: attachRed}">
+     </div>
+     <div class="demo"
+          v-on:click="agreen = !agreen"
+          :class="{green: agreen}">
+     </div>
+     <div class="demo"
+          :class="color">
+     </div>
+     <hr>
+     <input type="text" v-model="color">
+ </div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            attachRed: false,
+            agreen: false,
+            color: 'blue',
+        }
+    });
+</script>
+</body>
+</html>

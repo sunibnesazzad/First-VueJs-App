@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VeuJs</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+<div id= "app">
+ <input type="text" v-model="name"> <!--v-model initiate 2 way data binding-->
+    <p>{{ name }}</p>
+</div>
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            name: 'Sazzad'
+        },
+        methods:{
+            sayHello: function(){
+            }
+        }
+    });
+</script>
+</body>
+</html>

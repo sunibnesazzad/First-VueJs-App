@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VeuJs</title>
+<script src="vue.js"></script>
+</head>
+
+<body>
+   <div id= "app">
+      <input type="text" v-on:input="changeTitle">
+      <p>{{ sayHello() }} - <a v-bind:href="link">Facebook</a></p>
+   </div>
+
+
+<script>
+ new Vue({
+  el:'#app',
+  data:{
+   title: 'Hello World Sazzad!',
+   link : 'https://www.facebook.com/sunibn.sazzad'
+  },
+  methods:{
+  sayHello: function(){
+    return this.title;   
+    }
+  }
+ });
+</script>
+</body>
+</html>

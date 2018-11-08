@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VeuJs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id= "app">
+    <!--<button v-on:click="increase">Click me</button>-->
+    <button v-on:click="increase(2)">Click me</button>
+
+    <p>{{ count }}</p>
+    <p v-on:mousemove="updateCor"> Cordinate : {{x}} / {{y}}
+    <!-- -<span v-on:mousemove="dummy"> Dead Spot</span>-->
+        -<span v-on:mousemove.stop=""> Dead Spot</span>
+    </p>
+    <br>
+    <input type="text" v-on:keyup.enter.space="aleartme">
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            count: 0,
+            x:0,
+            y:0
+        },
+        methods:{
+            increase: function(step){
+                this.count += step;
+            },
+            updateCor: function(event){
+                this.x= event.clientX;
+                this.y= event.clientY;
+            },
+            dummy: function (event) {
+                event.stopPropagation();
+
+            },
+            aleartme: function (event) {
+                alert('aleart');
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VeuJs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p v-if="show">You can see me<span>Helo</span></p>
+    <p v-else>You can not see me</p>
+    <p>Pinoy shit</p>
+    <template v-if="show">
+        <h2>Hey noob</h2>
+        <p>U suck </p>
+    </template>
+    <!--if else do not hide data but in Vue Js we can hide data which is given below-->
+    <p v-show="show">This data will be hiden</p>
+
+    <button @click="show = !show">Switch</button>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+           show:true
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VeuJs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id= "app">
+    <!--<button v-on:click="increase">Click me</button>-->
+    <button v-on:click="count++">Click me</button>
+    <button v-on:click="count--">Decrease</button>
+    <p>Count :{{ count }}</p>
+    <br>
+    <!--<p> Result :{{ result }}</p>-->
+    <p> Result :{{ result() }}</p>
+
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            count: 0
+
+        },
+        methods:{
+            result(){
+               return this.count > 5 ? 'Greater than 5' : 'Less 5'
+           }
+        }
+    });
+</script>
+</body>
+</html>
